@@ -3,6 +3,6 @@
 My personal website. The template can be downloaded at [Unfold - Colorlab](https://colorlib.com/wp/template/unfold/)
 
 ## Check it online
+* [ariseus.net](https://www.ariseus.net)
 * [garywei.dev](https://www.garywei.dev)
-* [ariseus.dev](https://www.ariseus.dev)
 * [github.io](https://garywei944.github.io)
