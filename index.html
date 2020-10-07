@@ -23,7 +23,8 @@
 <body data-offset="200" data-spy="scroll" data-target=".site-nav-target">
 <nav class="unslate_co--site-mobile-menu">
     <div class="close-wrap d-flex">
-        <a class="d-flex ml-auto js-menu-toggle" href="#"> <span class="close-label"> Close </span>
+        <a class="d-flex ml-auto js-menu-toggle" href="#">
+            <span class="close-label"> Close </span>
             <div class="close-times">
                 <span class="bar1"> </span>
                 <span class="bar2"> </span>
@@ -72,7 +73,11 @@
                     <div class="col-md-5 text-right text-lg-left">
                         <ul class="site-nav-ul js-clone-nav text-left d-none d-lg-inline-block">
                             <li><a class="nav-link" href="#skills-section"> Skills </a></li>
-                            <li><a class="nav-link" href="#portfolio-section"> Projects </a></li>
+                            <li class="has-children"><a class="nav-link" href="#portfolio-section"> Projects </a>
+                                <ul class="dropdown">
+                                    <li><a href="project_astronaut.html" target="_top"> Astronaut </a></li>
+                                </ul>
+                            </li>
                             <!-- <li><a href="#journal-section" class="nav-link">Journal</a></li> -->
                             <li class="has-children"><a class="nav-link" href="#contact-section"> Contact </a>
                                 <ul class="dropdown">
@@ -565,7 +570,8 @@
                                         <p> Game </p>
                                     </div>
                                 </div>
-                                <img alt="Game" class="lazyload img-fluid" src="images/project_astronaut.png"/>
+                                <img alt="Game" class="lazyload img-fluid"
+                                     src="images/projects/cs590g_p1/cs590g_p1_start.png"/>
                             </a>
                         </div>
                     </div>
