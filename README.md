@@ -4,4 +4,3 @@ My personal website. The template can be downloaded at [Unfold - Colorlab](https
 
 ## Check it online
 * [garywei.dev](https://www.garywei.dev)
-* [ariseus.net](https://www.ariseus.net)
