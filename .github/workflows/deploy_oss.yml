@@ -15,9 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - run: mkdir web && ls | grep -v web | xargs mv -t web
+      - run: cd web && rm -fr .git .github CNAME .idea
       - name: Install Alibaba Cloud OSSUTIL
         run: wget http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64 && chmod +x ossutil64
       - name: Configure Alibaba Cloud OSSUTIL
         run: ./ossutil64 config -i ${ACCESS_KEY} -k ${ACCESS_KEY_SECRET} -e ${ENDPOINT} -c .ossutilconfig
       - name: Uploads the web folder to the choosen OSS bucket
-        run: ./ossutil64 --config-file .ossutilconfig cp . oss://${BUCKET} -r -f --exclude '.git' --exclude '.github' --exclude 'CNAME' --exclude '.idea'
+        run: ./ossutil64 --config-file .ossutilconfig cp ${{ github.workspace }}/web oss://${BUCKET} -r -f
