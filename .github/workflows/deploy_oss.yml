@@ -22,4 +22,4 @@ jobs:
       - name: Configure Alibaba Cloud OSSUTIL
         run: ./ossutil64 config -i ${ACCESS_KEY} -k ${ACCESS_KEY_SECRET} -e ${ENDPOINT} -c .ossutilconfig
       - name: Uploads the web folder to the choosen OSS bucket
-        run: ./ossutil64 --config-file .ossutilconfig cp ${{ github.workspace }}/web oss://${BUCKET} -r -f
+        run: ./ossutil64 -c .ossutilconfig cp ${{ github.workspace }}/web oss://${BUCKET} -u -r -f
