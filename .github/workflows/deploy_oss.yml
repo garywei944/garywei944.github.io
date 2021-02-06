@@ -16,7 +16,7 @@ jobs:
           accessKeySecret: ${{ secrets.ALIYUN_SECRET_ACCESS_KEY }}
           bucket: ${{ secrets.ALIYUN_OSS_BUCKET }}
           endpoint: oss-cn-beijing.aliyuncs.com
-          folder: /
+          folder: .
           exclude: |
             .git/
             .github/

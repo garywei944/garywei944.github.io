@@ -1,4 +1,4 @@
-name: Upload Website to Alibaba Cloud OSS
+name: Upload Website to AWS S3
 
 on:
   push:
