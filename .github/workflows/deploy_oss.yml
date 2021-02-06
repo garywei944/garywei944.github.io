@@ -1,25 +1,24 @@
-name: Push to Alibaba Cloud OSS
+name: Upload Website to Alibaba Cloud OSS
 
 on:
   push:
-    branches: [ main ]
-
-env:
-  BUCKET: ${{ secrets.ALIYUN_OSS_BUCKET }}
-  ENDPOINT: oss-cn-beijing.aliyuncs.com
-  ACCESS_KEY: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
-  ACCESS_KEY_SECRET: ${{ secrets.ALIYUN_SECRET_ACCESS_KEY }}
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - run: mkdir web && ls | grep -v web | xargs mv -t web
-      - run: cd web && rm -fr .git .github CNAME .idea
-      - name: Install Alibaba Cloud OSSUTIL
-        run: wget http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64 && chmod +x ossutil64
-      - name: Configure Alibaba Cloud OSSUTIL
-        run: ./ossutil64 config -i ${ACCESS_KEY} -k ${ACCESS_KEY_SECRET} -e ${ENDPOINT} -c .ossutilconfig
-      - name: Uploads the web folder to the choosen OSS bucket
-        run: ./ossutil64 -c .ossutilconfig cp ${{ github.workspace }}/web oss://${BUCKET} -u -r -f
+      - uses: actions/checkout@v2
+      - uses: fangbinwei/aliyun-oss-website-action@v1
+        with:
+          accessKeyId: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
+          accessKeySecret: ${{ secrets.ALIYUN_SECRET_ACCESS_KEY }}
+          bucket: ${{ secrets.ALIYUN_OSS_BUCKET }}
+          endpoint: oss-cn-beijing.aliyuncs.com
+          folder: /
+          exclude: |
+            .git/
+            .github/
+            .idea/
+            CNAME
