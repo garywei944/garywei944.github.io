@@ -1,0 +1,25 @@
+{
+  "name": "garywei",
+  "version": "2.0.0",
+  "description": "Gary Wei's Personal Website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garywei944/garywei944.github.io.git"
+  },
+  "keywords": [
+    "garywei",
+    "garywei944",
+    "aris",
+    "ariseus"
+  ],
+  "author": "garywei944",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/garywei944/garywei944.github.io/issues"
+  },
+  "homepage": "https://github.com/garywei944/garywei944.github.io#readme"
+}
